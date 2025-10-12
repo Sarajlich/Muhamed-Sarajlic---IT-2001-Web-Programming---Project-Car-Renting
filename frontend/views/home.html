@@ -1,0 +1,21 @@
+<section class="hero">
+    <div>
+      <h1>Rent a car in seconds</h1>
+      <p>Browse available cars, filter by category, and reserve with a click.</p>
+      <form id="quick-search" class="card" style="display:flex; gap:.5rem; align-items:center;">
+        <input id="q" name="q" placeholder="Search e.g. SUV, Tesla" style="flex:1; padding:.6rem .8rem; border:1px solid #ddd; border-radius:.4rem;" />
+        <button class="btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+    
+  </section>
+  
+  <script>
+    $('#quick-search').on('submit', function(e){
+      e.preventDefault();
+      const term = ($('#q').val() || '').toLowerCase().trim();
+      sessionStorage.setItem('searchTerm', term);
+      window.location.hash = '#cars';
+    });
+  </script>
+  

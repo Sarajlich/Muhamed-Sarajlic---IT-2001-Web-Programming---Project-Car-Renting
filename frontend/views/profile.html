@@ -1,0 +1,13 @@
+<h2 style="text-align: center;">Profile</h2>
+
+<form id="profile-form" class="grid" style="max-width:640px; margin: 0 auto; text-align:center;">
+  <label>Name</label>
+  <input name="name" class="card" />
+  <label>Email</label>
+  <input name="email" class="card" type="email" />
+  <button class="btn-primary" type="submit">Save</button>
+</form>
+
+<script>
+  $('#profile-form').on('submit', function(e){ e.preventDefault(); alert('Saved (static demo).'); });
+</script>

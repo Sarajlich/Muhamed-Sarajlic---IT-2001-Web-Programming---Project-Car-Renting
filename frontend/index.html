@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car Renting</title>
+
+  <link rel="stylesheet" href="js/lib/jquery.spapp.css" />
+ 
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#home">
+      <img src="assets/logo.svg" alt="App logo" />
+    </a>
+    <a href="#home">Home</a>
+    <a href="#cars">Cars</a>
+    <a href="#reservations">Reservations</a>
+    <!-- <a href="#profile">Profile</a> -->
+    <a href="#login">Login</a>
+    <a href="#register">Sign up</a>
+    <!-- <a href="#admin">Admin</a> -->
+  </nav>
+
+  <main id="spapp" role="main" aria-live="polite">
+    <section id="home"         class="spapp-page" data-load="home.html"></section>
+    <section id="cars"         class="spapp-page" data-load="cars.html"></section>
+    <section id="reservations" class="spapp-page" data-load="reservations.html"></section>
+    <section id="profile"      class="spapp-page" data-load="profile.html"></section>
+    <section id="login"        class="spapp-page" data-load="login.html"></section>
+    <section id="register"     class="spapp-page" data-load="register.html"></section>
+    <section id="admin"        class="spapp-page" data-load="admin.html"></section>
+    <section id="not-found"    class="spapp-page" data-load="not-found.html"></section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Car Renting</footer>
+
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/jquery.spapp.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
