@@ -4,10 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Car Renting</title>
-
-  <link rel="stylesheet" href="js/lib/jquery.spapp.css" />
  
   <link rel="stylesheet" href="css/styles.css" />
+   <link rel="stylesheet" href="./css/spapp.css">
 </head>
 <body>
   <nav class="nav">
@@ -22,22 +21,26 @@
     <a href="#register">Sign up</a>
     <!-- <a href="#admin">Admin</a> -->
   </nav>
+  <section id="pageContent">
+       
 
-  <main id="spapp" role="main" aria-live="polite">
-    <section id="home"         class="spapp-page" data-load="home.html"></section>
-    <section id="cars"         class="spapp-page" data-load="cars.html"></section>
-    <section id="reservations" class="spapp-page" data-load="reservations.html"></section>
-    <section id="profile"      class="spapp-page" data-load="profile.html"></section>
-    <section id="login"        class="spapp-page" data-load="login.html"></section>
-    <section id="register"     class="spapp-page" data-load="register.html"></section>
-    <section id="admin"        class="spapp-page" data-load="admin.html"></section>
-    <section id="not-found"    class="spapp-page" data-load="not-found.html"></section>
+  <main id="spapp" role="main" >
+    <section id="home"          data-load="home.html">></section>
+    
+    <section id="cars"         data-load="cars.html"></section>
+    <section id="reservations"  data-load="reservations.html"></section>
+    <section id="profile"       data-load="profile.html"></section>
+    <section id="login"         data-load="login.html"></section>
+    <section id="register"      data-load="register.html"></section>
+    <section id="admin"         data-load="admin.html"></section>
+
   </main>
+  </section>
 
   <footer class="footer">© <span id="year"></span> Car Renting</footer>
 
-  <script src="js/lib/jquery.min.js"></script>
-  <script src="js/lib/jquery.spapp.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.spapp.min.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>

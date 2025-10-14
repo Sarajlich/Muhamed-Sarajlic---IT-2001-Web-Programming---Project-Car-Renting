@@ -1,4 +1,4 @@
-<section class="hero">
+<section id="home" class="hero">
     <div>
       <h1>Rent a car in seconds</h1>
       <p>Browse available cars, filter by category, and reserve with a click.</p>
@@ -7,15 +7,14 @@
         <button class="btn-primary" type="submit">Search</button>
       </form>
     </div>
-    
-  </section>
-  
-  <script>
-    $('#quick-search').on('submit', function(e){
-      e.preventDefault();
-      const term = ($('#q').val() || '').toLowerCase().trim();
-      sessionStorage.setItem('searchTerm', term);
-      window.location.hash = '#cars';
-    });
-  </script>
+
+    <script>
+      $('#quick-search').on('submit', function(e){
+        e.preventDefault();
+        const term = ($('#q').val() || '').toLowerCase().trim();
+        sessionStorage.setItem('searchTerm', term);
+        window.location.hash = '#cars';
+      });
+    </script> 
+</section>
   
