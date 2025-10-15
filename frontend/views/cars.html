@@ -12,20 +12,33 @@
     { id:4, brand:'Tesla', model:'Model 3', year:2022, price:95, status:'available', category:'Electric' }
   ];
 
-  (function renderCars(){
+  function renderCars() {
     const $grid = $('#cars-grid');
-    const term = (sessionStorage.getItem('searchTerm') || '').trim();
-    const list = term ? CARS.filter(c => Object.values(c).join(' ').toLowerCase().includes(term)) : CARS;
+    const term = (sessionStorage.getItem('searchTerm') || '').toLowerCase().trim();
+
+    const list = term
+      ? CARS.filter(c => Object.values(c).join(' ').toLowerCase().includes(term))
+      : CARS;
+
     const html = list.map(c => `
       <article class="card">
         <h3 style="margin:.3rem 0;">${c.brand} ${c.model} <span class="badge">${c.year}</span></h3>
         <div>Category: ${c.category}</div>
         <div><strong>$${c.price}</strong> / day</div>
-        <div style="margin-top: 10px;"><span class="badge" style="background:${c.status==='available'?'#d1fae5':'#e5e7eb'}">${c.status}</span></div>
+        <div style="margin-top: 10px;">
+          <span class="badge" style="background:${c.status==='available'?'#d1fae5':'#e5e7eb'}">${c.status}</span>
+        </div>
         <button class="btn-primary" style="margin-top: 15px;" ${c.status!=='available'?'disabled':''}>Reserve</button>
       </article>
     `).join('');
     $grid.html(html);
-  })();
+  }
+
+  $(document).on('hashchange', function(){
+    if (window.location.hash === '#cars') renderCars();
+  });
+
+  if (window.location.hash === '#cars') renderCars();
 </script>
+
 </section>
