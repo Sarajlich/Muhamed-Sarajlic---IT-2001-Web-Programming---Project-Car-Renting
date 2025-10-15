@@ -8,13 +8,5 @@
       </form>
     </div>
 
-    <script>
-      $('#quick-search').on('submit', function(e){
-        e.preventDefault();
-        const term = ($('#q').val() || '').toLowerCase().trim();
-        sessionStorage.setItem('searchTerm', term);
-        window.location.hash = '#cars';
-      });
-    </script> 
 </section>
   

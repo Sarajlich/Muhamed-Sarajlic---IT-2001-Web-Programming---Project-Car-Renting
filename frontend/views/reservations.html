@@ -11,17 +11,6 @@
   </table>
 </div>
 
-<script>
-  const rows = [
-    { id:101, car:'Toyota Corolla', start:'2025-10-12', end:'2025-10-15', total:105, status:'pending' }
-  ];
-  $('#reservations-body').html(rows.map(r => `
-    <tr>
-      <td>#${r.id}</td><td>${r.car}</td><td>${r.start}</td><td>${r.end}</td><td>$${r.total}</td>
-      <td><span class="badge">${r.status}</span></td>
-    </tr>
-  `).join(''));
-</script>
 
 
 </section>
