@@ -16,15 +16,19 @@ body {
 }
 
 .nav {
-    display:flex;
-    gap:1rem;
-    align-items:center;
-    padding:.75rem 1rem;
-    background:#fff;
-    border-bottom:1px solid #eaeaea;
-    position:sticky;
-    top:0;
-    z-index:10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #fff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .nav .brand img {
@@ -33,9 +37,15 @@ body {
 }
 
 .nav a {
-    text-decoration:none;
-    color:#333;
-    padding:.25rem .5rem;
+    text-decoration: none;
+    color: #222;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav a:hover {
+    color: var(--brand);
+    transform: translateY(-2px);
 }
 
 .nav a.btn {
@@ -112,4 +122,63 @@ th, td {
     padding:.6rem .4rem;
     border-bottom:1px solid #eee;
     text-align:left;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f5ff, #ffffff);
+    min-height: 70vh;
+    border: none;
+    box-shadow: none;
+}
+  
+.hero-content {
+    max-width: 600px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+  
+.hero h1 {
+    font-size: 2rem;
+    color: var(--brand);
+    margin-bottom: 0.75rem;
+}
+  
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+  
+.search-card {
+    display: flex;
+    gap: 0.5rem;
+    background: #fff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+  
+.search-card input {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+}
+  
+.search-card input:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+}
+  
+.hero-logo {
+    width: 200px;
+    margin-bottom: -0.2 rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }

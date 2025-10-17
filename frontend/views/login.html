@@ -1,18 +1,18 @@
 <section id="login">
 
+    <h2 style="text-align: center;">Login</h2>
+    <br>
+    <form id="login-form" class="grid" style="max-width:480px; margin: 0 auto; text-align:center;">
 
-<h2 style="text-align: center;">Login</h2>
-<br>
-<form id="login-form" class="grid" style="max-width:480px; margin: 0 auto; text-align:center;">
-  <label>Email</label>
-    <input name="email" class="card" type="email" required />
-  <label>Password</label>
-    <input name="password" class="card" type="password" required />
-  <br>
-  <button class="btn-primary" type="submit">Login</button>
-</form>
+      <label>Email</label> <input name="email" class="card" type="email" required />
+      <label>Password</label> <input name="password" class="card" type="password" required />
 
-<script>
-    $('#login-form').on('submit', function(e){ e.preventDefault(); alert('Static login for now, later on it will change'); });
-</script>
+      <br> <button class="btn-primary" type="submit">Login</button>
+
+    </form>
+
+  <script>
+      $('#login-form').on('submit', function(e){ e.preventDefault(); alert('Static login for now, later on it will change'); });
+  </script>
+  
 </section>

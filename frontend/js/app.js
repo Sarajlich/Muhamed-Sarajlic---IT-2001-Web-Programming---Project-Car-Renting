@@ -9,7 +9,9 @@ const CARS = [
     { id:1, brand:'Toyota', model:'Corolla', year:2021, price:35, status:'available',   category:'Sedan' },
     { id:2, brand:'Volkswagen', model:'Golf',  year:2020, price:40, status:'available',   category:'Hatchback' },
     { id:3, brand:'BMW',       model:'X3',     year:2019, price:75, status:'unavailable', category:'SUV' },
-    { id:4, brand:'Tesla',     model:'Model 3',year:2022, price:95, status:'available',   category:'Electric' }
+    { id:4, brand:'Tesla',     model:'Model 3',year:2022, price:95, status:'available',   category:'Electric' },
+    { id:5, brand:'BMW',     model:'M5 Comp',year:2026, price:120, status:'available',   category:'Sedan' },
+    { id:6, brand:'Mercedes',     model:'GLE',year:2024, price:100, status:'unavailable',   category:'SUV' }
 ];
 
 //home - za pretragu auta
