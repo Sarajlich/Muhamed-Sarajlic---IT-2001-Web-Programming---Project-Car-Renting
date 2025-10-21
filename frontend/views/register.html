@@ -1,0 +1,19 @@
+<section id="register">
+
+  <h2 style="text-align: center;">Create account</h2><br>
+  
+  <form id="register-form" class="grid" style="max-width:480px; margin: 0 auto; text-align:center;">
+
+    <label>Name</label> <input class="card" required />
+    <label>Email</label> <input class="card" type="email" required />
+    <label>Password</label> <input class="card" type="password" required />
+    
+    <br> <button class="btn-primary" type="submit">Sign up</button>
+
+  </form>
+
+  <script>
+      $('#register-form').on('submit', function(e){ e.preventDefault(); alert('Static register for now later on it will be functional'); });
+  </script>
+  
+</section>
