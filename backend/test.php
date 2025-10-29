@@ -12,9 +12,9 @@ $reservationDao = new ReservationDao();
 $paymentDao = new PaymentDao();
 
 $userDao->insert([
-   'name' => 'John Doe',
-   'email' => 'john@john.com',
-   'password_hash' => password_hash('password123', PASSWORD_DEFAULT),
+   'name' => 'Johnaaaany Doe',
+   'email' => 'johnnaaaaay@example.com',
+   'password_hash' => password_hash('password1aa213', PASSWORD_DEFAULT),
    'role' => 'USER'
 ]);
 
@@ -28,7 +28,7 @@ $carDao->insert([
    'model' => 'Corolla',
    'year' => 2022,
    'price_per_day' => 70.00,
-   'status' => 'AVAILABLE',
+   'status' => 1,
    'category_id' => 1
 ]);
 
@@ -44,9 +44,8 @@ $reservationDao->insert([
 $paymentDao->insert([
    'reservation_id' => 1,
    'amount' => 210.00,
-   'method' => 'CARD',
-   'status' => 'SUCCESS',
-   'date' => date('Y-m-d H:i:s')
+   'date' => date('Y-m-d H:i:s'),
+   'method' => 'CARD'
 ]);
 
 $users = $userDao->getAll();

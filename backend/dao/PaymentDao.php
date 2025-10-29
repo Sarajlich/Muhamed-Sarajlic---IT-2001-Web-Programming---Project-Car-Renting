@@ -1,28 +1,41 @@
 <?php
+require_once __DIR__ . '/BaseDao.php';
 
-require_once 'BaseDao.php';
-
-class PaymentDao extends BaseDao {
-    public function __construct() {
-        parent::__construct("payments");
+class PaymentDao extends BaseDao{
+    public function __construct(){
+        parent::__construct('payments');
     }
 
-    public function getByReservationId($reservation_id) {
-        $stmt = $this->connection->prepare("SELECT * FROM payments WHERE reservation_id = :reservation_id");
-        $stmt->bindParam(':reservation_id', $reservation_id);
-        $stmt->execute();
-        return $stmt->fetchAll();
+    public function createPayment($payment){
+        $data = [
+            'reservation_id' => $payment['reservation_id'],
+            'amount'         => $payment['amount'],
+            'date'           => $payment['date'],
+            'method'         => $payment['method']
+        ];
+        return $this->insert($data);
     }
 
-    public function getByUserId($user_id) {
-        $stmt = $this->connection->prepare("SELECT p.* 
-                                            FROM payments p
-                                            JOIN reservations r ON p.reservation_id = r.reservation_id
-                                            WHERE r.user_id = :user_id");
-        $stmt->bindParam(':user_id', $user_id);
-        $stmt->execute();
-        return $stmt->fetchAll();
+    public function getAllPayments(){
+        return $this->getAll();
+    }
+
+    public function getPaymentById($id){
+        return $this->getById($id);
+    }
+
+    public function updatePayment($id, $payment){
+        $data = [
+            'reservation_id' => $payment['reservation_id'],
+            'amount'         => $payment['amount'],
+            'date'           => $payment['date'],
+            'method'         => $payment['method']
+        ];
+        return $this->update($id, $data);
+    }
+
+    public function deletePayment($id){
+        return $this->delete($id);
     }
 }
-
 ?>

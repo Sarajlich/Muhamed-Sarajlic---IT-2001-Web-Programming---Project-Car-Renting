@@ -1,24 +1,45 @@
 <?php
+require_once __DIR__ . '/BaseDao.php';
 
-require_once 'BaseDao.php';
-
-class CarDao extends BaseDao {
-    public function __construct() {
-        parent::__construct("cars");
+class CarDao extends BaseDao{
+    public function __construct(){
+        parent::__construct('cars');
     }
 
-    public function getByCategoryId($category_id) {
-        $stmt = $this->connection->prepare("SELECT * FROM cars WHERE category_id = :category_id");
-        $stmt->bindParam(':category_id', $category_id);
-        $stmt->execute();
-        return $stmt->fetchAll();
+    public function createCar($car){
+        $data = [
+            'brand'        => $car['brand'],
+            'model'        => $car['model'],
+            'year'         => $car['year'],
+            'price_per_day'=> $car['price_per_day'],
+            'status'    => $car['status'],
+            'category_id'  => $car['category_id']
+        ];
+        return $this->insert($data);
     }
 
-    public function getAvailableCars() {
-        $stmt = $this->connection->prepare("SELECT * FROM cars WHERE status = 'AVAILABLE'");
-        $stmt->execute();
-        return $stmt->fetchAll();
+    public function getAllCars(){
+        return $this->getAll();
+    }
+
+    public function getCarById($id){
+        return $this->getById($id);
+    }
+
+    public function updateCar($id, $car){
+        $data = [
+            'brand'        => $car['brand'],
+            'model'        => $car['model'],
+            'year'         => $car['year'],
+            'price_per_day'=> $car['price_per_day'],
+            'status'    => $car['status'],
+            'category_id'  => $car['category_id']
+        ];
+        return $this->update($id, $data);
+    }
+
+    public function deleteCar($id){
+        return $this->delete($id);
     }
 }
-
 ?>
