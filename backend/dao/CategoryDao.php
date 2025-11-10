@@ -22,6 +22,12 @@ class CategoryDao extends BaseDao{
         return $this->getById($id);
     }
 
+    public function getByName($name) {
+        $stmt = $this->connection->prepare("SELECT * FROM categories WHERE name = :name");
+        $stmt->execute(['name' => $name]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function updateCategory($id, $category){
         $data = [
             'name'        => $category['name'],

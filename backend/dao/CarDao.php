@@ -26,6 +26,12 @@ class CarDao extends BaseDao{
         return $this->getById($id);
     }
 
+    public function getByBrand($brand) {
+        $stmt = $this->connection->prepare("SELECT * FROM cars WHERE brand = :brand");
+        $stmt->execute(['brand' => $brand]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function updateCar($id, $car){
         $data = [
             'brand'        => $car['brand'],
