@@ -1,5 +1,5 @@
 <?php
-require_once '../dao/CarDao.php';
+require_once __DIR__ . '/../dao/CarDao.php';
 require_once 'BaseService.php';
 
 class CarService extends BaseService {

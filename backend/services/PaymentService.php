@@ -1,6 +1,6 @@
 <?php
-require_once '../dao/PaymentDao.php';
-require_once 'BaseService.php';
+require_once __DIR__ . '/../dao/PaymentDao.php';
+require_once __DIR__ . '/BaseService.php';
 
 class PaymentService extends BaseService {
     public function __construct() {

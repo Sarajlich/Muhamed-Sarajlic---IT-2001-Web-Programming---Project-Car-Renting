@@ -18,10 +18,15 @@ class BaseDao {
     }
 
     public function getById($id) {
-        $stmt = $this->connection->prepare("SELECT * FROM " . $this->table . " WHERE user_id = :id");
+        if ($this->table === 'categories') {
+            $id_column = 'category_id';
+        } else {
+            $id_column = rtrim($this->table, 's') . '_id';
+        }
+        $stmt = $this->connection->prepare("SELECT * FROM " . $this->table . " WHERE $id_column = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function insert($data) {
@@ -38,16 +43,30 @@ class BaseDao {
             $fields .= "$key = :$key, ";
         }
         $fields = rtrim($fields, ", ");
-        $sql = "UPDATE " . $this->table . " SET $fields WHERE user_id = :id";
+        
+        if ($this->table === 'categories') {
+            $id_column = 'category_id';
+        } else {
+            $id_column = rtrim($this->table, 's') . '_id';
+        }
+
+        $sql = "UPDATE " . $this->table . " SET $fields WHERE $id_column = :id";
         $stmt = $this->connection->prepare($sql);
+    
         $data['id'] = $id;
         return $stmt->execute($data);
     }
  
     public function delete($id) {
-        $stmt = $this->connection->prepare("DELETE FROM " . $this->table . " WHERE user_id = :id");
+        if ($this->table === 'categories') {
+            $id_column = 'category_id';
+        } else {
+            $id_column = rtrim($this->table, 's') . '_id';
+        }
+        $stmt = $this->connection->prepare("DELETE FROM " . $this->table . " WHERE $id_column = :id");
         $stmt->bindParam(':id', $id);
-        return $stmt->execute();
+        $stmt->execute();
+        return $stmt->rowCount();
     }
  
 }
