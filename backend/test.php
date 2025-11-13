@@ -12,8 +12,8 @@ $reservationDao = new ReservationDao();
 $paymentDao = new PaymentDao();
 
 $userDao->insert([
-   'name' => 'Johnaaaany Doe',
-   'email' => 'johnnaaaaay@example.com',
+   'name' => 'Johnaaadadadaany Doe',
+   'email' => 'johnnaaaadadadaay@example.com',
    'password_hash' => password_hash('password1aa213', PASSWORD_DEFAULT),
    'role' => 'USER'
 ]);

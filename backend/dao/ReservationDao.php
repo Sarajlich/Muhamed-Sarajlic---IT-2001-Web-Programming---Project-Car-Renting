@@ -41,5 +41,12 @@ class ReservationDao extends BaseDao{
     public function deleteReservation($id){
         return $this->delete($id);
     }
+
+    public function getByUser($user_id) {
+        $stmt = $this->connection->prepare("SELECT * FROM reservations WHERE user_id = :user_id");
+        $stmt->execute(['user_id' => $user_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
 ?>

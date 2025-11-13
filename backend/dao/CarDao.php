@@ -41,5 +41,12 @@ class CarDao extends BaseDao{
     public function deleteCar($id){
         return $this->delete($id);
     }
+
+
+    public function getByBrand($brand) {
+        $stmt = $this->connection->prepare("SELECT * FROM cars WHERE brand = :brand");
+        $stmt->execute(['brand' => $brand]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
